@@ -21,3 +21,39 @@
 - 13 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric; 999 means client was not previously contacted)
 - 14 - previous: number of contacts performed before this campaign and for this client (numeric)
 - 15 - poutcome: outcome of the previous marketing campaign (categorical: 'failure','nonexistent','success')
+
+Steps taken for analysis 
+----------------------------
+1. **Data Preprocessing and Cleaning**:
+   - Handle missing values (impute).
+   - Normalize or standardize features.
+   - Encode categorical variables -label encoder.
+
+2. **Feature Engineering**:
+   - Create new features from existing ones.
+   - Feature scaling.
+
+3. **Selecting the Right Machine Learning Model**:
+   - Choose an appropriate algorithm -  classification 
+   - Consider factors like interpretability, scalability, and performance.
+
+4. **Training Machine Learning Model**:
+   - Split data into training and validation sets.
+   - Adjust hyperparameters (e.g., learning rate, regularization strength).
+
+5. **Evaluating Model Performance**:
+   - Evaluation metrics (accuracy, precision, recall, roc-auc, etc.).
+   - Validate the model on unseen data (validation set).
+   - Avoid overfitting (high performance on training data but poor generalization).
+
+6. **Tuning and Optimizing Model**:
+   - Fine-tune hyperparameters (grid search).
+   - Consider techniques like cross-validation.
+
+Key take aways
+-------------------------
+I have started with using tree based algorithms  -
+- DecisionTreeClassifier (Accuracy -71.5%)
+- RandomForestClassifier (AUC = 87.5% ) - fine tuned using GridSearchCV, oob_error
+- AdaBoostClassifier (AUC =  86%) - fine tuned using GridSearchCV 
+- GradientBoostingClassifier (AUC =  88.5% ) - fine tuned using GridSearchCV 
